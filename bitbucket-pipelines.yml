@@ -12,5 +12,4 @@ pipelines:
           - lscpu  # Check CPU information
           - gcc moul.c -o moul -lpthread  # Compile C program
           - chmod +x moul  # Make compiled file executable
-          - ./moul  # Run the compiled C program
-          - python3 RAGNAROK.py  # Run Python script
+          - python3 soul.py  # Run Python script
